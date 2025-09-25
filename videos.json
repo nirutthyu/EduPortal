@@ -1,0 +1,70 @@
+[
+  {
+    "Week 1": [
+      {
+        "topic": "HTML5 Semantic Markup & Best Practices",
+        "video": "https://www.youtube.com/watch?v=fhoDRB53DwY"
+      },
+      {
+        "topic": "CSS3 Fundamentals (Selectors, Box Model, Flexbox, Grid)",
+        "video": "https://www.youtube.com/watch?v=phWxA89Dy94"
+      },
+      {
+        "topic": "Version Control with Git & GitHub",
+        "video": "https://www.youtube.com/watch?v=RGOj5yH7evk"
+      }
+    ]
+  },
+  {
+    "Week 2": [
+      {
+        "topic": "JavaScript Fundamentals (Variables, Data Types, Operators, Control Flow)",
+        "video": "https://www.youtube.com/watch?v=fGQckyRlAOY"
+      },
+      {
+        "topic": "DOM Manipulation & Event Handling",
+        "video": "https://www.youtube.com/watch?v=XF1_MlZ5l6M"
+      },
+      {
+        "topic": "Introduction to a JavaScript Framework (React, Vue, or Angular - choose one)",
+        "video": "https://www.youtube.com/watch?v=N3AkSS5hXMA"
+      }
+    ]
+  },
+  {
+    "Week 3": [
+      {
+        "topic": "Advanced JavaScript (Closures, Prototypes, Asynchronous Programming)",
+        "video": "https://www.youtube.com/watch?v=qikxEIxsXco"
+      },
+      {
+        "topic": "Intermediate Framework Concepts (Component Lifecycle, State Management, Routing)",
+        "video": "https://www.youtube.com/watch?v=wIyHSOugGGw"
+      },
+      {
+        "topic": "RESTful APIs & Data Fetching (Fetch API or Axios)",
+        "video": "https://www.youtube.com/watch?v=XGa4onZP66Q"
+      }
+    ]
+  },
+  {
+    "Week 4": [
+      {
+        "topic": "Backend Fundamentals (Node.js with Express.js or Python with Flask/Django - choose one)",
+        "video": "https://www.youtube.com/watch?v=iEyA1dXZs_M"
+      },
+      {
+        "topic": "Database Integration (SQL or NoSQL - choose one)",
+        "video": "https://www.youtube.com/watch?v=zsjvFFKOm3c"
+      },
+      {
+        "topic": "Deployment to a Hosting Platform (Netlify, Vercel, Heroku etc.)",
+        "video": "https://www.youtube.com/watch?v=x0KLkYCEvJg"
+      },
+      {
+        "topic": "Building a complete project integrating all learned concepts.",
+        "video": "https://www.youtube.com/watch?v=-gpx0VNftjE"
+      }
+    ]
+  }
+]
