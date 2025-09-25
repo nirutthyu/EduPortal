@@ -6,8 +6,12 @@
         "video": "https://www.youtube.com/watch?v=fhoDRB53DwY"
       },
       {
-        "topic": "CSS3 Fundamentals (Selectors, Box Model, Flexbox, Grid)",
-        "video": "https://www.youtube.com/watch?v=phWxA89Dy94"
+        "topic": "CSS3 Fundamentals (Selectors, Box Model, Positioning)",
+        "video": "https://www.youtube.com/watch?v=Xrxd6cEajhM"
+      },
+      {
+        "topic": "Introduction to JavaScript Fundamentals (Variables, Data Types, Operators)",
+        "video": "https://www.youtube.com/watch?v=PkZNo7MFNFg"
       },
       {
         "topic": "Version Control with Git & GitHub",
@@ -18,12 +22,16 @@
   {
     "Week 2": [
       {
-        "topic": "JavaScript Fundamentals (Variables, Data Types, Operators, Control Flow)",
-        "video": "https://www.youtube.com/watch?v=fGQckyRlAOY"
+        "topic": "Advanced CSS (Flexbox, Grid, Animations, Transitions)",
+        "video": "https://www.youtube.com/watch?v=phWxA89Dy94"
       },
       {
-        "topic": "DOM Manipulation & Event Handling",
-        "video": "https://www.youtube.com/watch?v=XF1_MlZ5l6M"
+        "topic": "JavaScript DOM Manipulation & Events",
+        "video": "https://www.youtube.com/watch?v=5fb2aPlgoys"
+      },
+      {
+        "topic": "Asynchronous JavaScript (Promises, Async/Await)",
+        "video": "https://www.youtube.com/watch?v=DHvZLI7Db8E"
       },
       {
         "topic": "Introduction to a JavaScript Framework (React, Vue, or Angular - choose one)",
@@ -34,36 +42,40 @@
   {
     "Week 3": [
       {
-        "topic": "Advanced JavaScript (Closures, Prototypes, Asynchronous Programming)",
-        "video": "https://www.youtube.com/watch?v=qikxEIxsXco"
+        "topic": "Deep Dive into Chosen Framework (Components, State Management, Routing)",
+        "video": "https://www.youtube.com/watch?v=RLnsetuODbg"
       },
       {
-        "topic": "Intermediate Framework Concepts (Component Lifecycle, State Management, Routing)",
-        "video": "https://www.youtube.com/watch?v=wIyHSOugGGw"
-      },
-      {
-        "topic": "RESTful APIs & Data Fetching (Fetch API or Axios)",
+        "topic": "RESTful APIs and fetching data with JavaScript (Fetch API or Axios)",
         "video": "https://www.youtube.com/watch?v=XGa4onZP66Q"
+      },
+      {
+        "topic": "Building a small project integrating frontend framework and API",
+        "video": "https://www.youtube.com/watch?v=XGa4onZP66Q"
+      },
+      {
+        "topic": "Testing Fundamentals (Unit & Integration tests)",
+        "video": "https://www.youtube.com/watch?v=u6QfIXgjwGQ"
       }
     ]
   },
   {
     "Week 4": [
       {
-        "topic": "Backend Fundamentals (Node.js with Express.js or Python with Flask/Django - choose one)",
+        "topic": "Backend Introduction (Node.js with Express.js or similar, database selection)",
         "video": "https://www.youtube.com/watch?v=iEyA1dXZs_M"
       },
       {
-        "topic": "Database Integration (SQL or NoSQL - choose one)",
-        "video": "https://www.youtube.com/watch?v=zsjvFFKOm3c"
+        "topic": "Database design and interaction (SQL or NoSQL based on backend choice)",
+        "video": "https://www.youtube.com/watch?v=3JW732GrMdg"
       },
       {
-        "topic": "Deployment to a Hosting Platform (Netlify, Vercel, Heroku etc.)",
+        "topic": "Deployment (Netlify, Vercel, Heroku, AWS - choose one)",
         "video": "https://www.youtube.com/watch?v=x0KLkYCEvJg"
       },
       {
-        "topic": "Building a complete project integrating all learned concepts.",
-        "video": "https://www.youtube.com/watch?v=-gpx0VNftjE"
+        "topic": "Advanced Project: Building a more complex web application integrating frontend and backend",
+        "video": "https://www.youtube.com/watch?v=vP3TRAsjZss"
       }
     ]
   }

@@ -67,6 +67,7 @@ def transcribe_audio_in_chunks(audio_file, chunk_length=60):
             
             try:
                 text = recognizer.recognize_google(audio_chunk)
+                print(text)
                 full_transcript.append(text)
             except sr.UnknownValueError:
                 full_transcript.append("[Unintelligible]")
@@ -80,6 +81,7 @@ def transcribe_audio_in_chunks(audio_file, chunk_length=60):
 def get_transcript(video_id):
     audio_file = download_audio(video_id)
     transcript = transcribe_audio_in_chunks(audio_file)
+    print("transcript fetched")
     os.remove(audio_file)
     return transcript  # just return string
     

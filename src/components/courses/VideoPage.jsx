@@ -21,8 +21,10 @@ const VideoPage = () => {
   const [currentWeek, setCurrentWeek] = useState(0);
   const [currentVideo, setCurrentVideo] = useState(0);
   const [unlockedVideos, setUnlockedVideos] = useState({});
-  const [summary, setSummary] = useState(""); // store summary
+  const [summary, setSummary] = useState("");
   const [loadingSummary, setLoadingSummary] = useState(false);
+  const [loadingRoadmap, setLoadingRoadmap] = useState(false);
+  const [showRoadmap, setShowRoadmap] = useState(false);
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -30,6 +32,7 @@ const VideoPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoadingRoadmap(true);
     try {
       const res = await fetch("http://127.0.0.1:5000/generate-roadmap", {
         method: "POST",
@@ -48,6 +51,8 @@ const VideoPage = () => {
       }
     } catch (err) {
       console.error("Network error:", err);
+    } finally {
+      setLoadingRoadmap(false);
     }
   };
 
@@ -64,7 +69,7 @@ const VideoPage = () => {
       setCurrentWeek(nextWeek);
       setCurrentVideo(nextVideo);
       setUnlockedVideos((prev) => ({ ...prev, [`${nextWeek}-${nextVideo}`]: true }));
-      setSummary(""); // reset summary when moving to next video
+      setSummary("");
     }
   };
 
@@ -88,15 +93,20 @@ const VideoPage = () => {
     }
   };
 
+  const Loader = () => (
+    <div className="flex justify-center items-center py-10">
+      <div className="w-12 h-12 border-4 border-blue-400 border-dashed rounded-full animate-spin"></div>
+    </div>
+  );
+
   if (showForm) {
     return (
       <div className="max-w-2xl mx-auto p-8 bg-white shadow-lg rounded-2xl">
         <h2 className="text-2xl font-bold text-center mb-6">Tell Us About Yourself - {serviceTitle}</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Form Fields */}
           {["age", "duration", "pace", "level", "experience", "summaryType", "goal"].map((field) => (
             <div key={field}>
-              <label className="block font-medium text-gray-700 mb-1">{field}</label>
+              <label className="block font-medium text-gray-700 mb-1 capitalize">{field}</label>
               {field === "goal" ? (
                 <textarea
                   name={field}
@@ -146,6 +156,7 @@ const VideoPage = () => {
             Generate Roadmap
           </button>
         </form>
+        {loadingRoadmap && <Loader />}
       </div>
     );
   }
@@ -154,12 +165,68 @@ const VideoPage = () => {
   const topic = videos[currentWeek][weekName][currentVideo];
 
   return (
-    <div className="p-6 space-y-6">
-      <h2 className="text-2xl font-bold">Your Personalized Roadmap - {serviceTitle}</h2>
+    <div className="relative p-6 space-y-6 flex flex-col items-center">
+      {/* Floating roadmap button */}
+      <button
+        onClick={() => setShowRoadmap(true)}
+        className="fixed top-6 right-6 bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-700"
+      >
+        View Roadmap
+      </button>
 
-      {roadmap && <pre className="bg-gray-100 p-4 rounded-lg whitespace-pre-wrap">{roadmap}</pre>}
+      {/* Roadmap Modal */}
+      {/* Roadmap Modal */}
+{showRoadmap && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="bg-white p-6 rounded-2xl shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+      <h2 className="text-2xl font-bold mb-6 text-center text-blue-700">
+        📍 Learning Roadmap
+      </h2>
 
-      <div className="bg-white shadow-lg rounded-2xl p-6">
+      {/* Parse roadmap into weeks */}
+      {roadmap
+        .split(/Week\s*\d+:/i)
+        .map((chunk, index) => {
+          if (!chunk.trim()) return null;
+          const weekNumber = index ;
+          const lines = chunk
+            .split("\n")
+            .filter((line) => line.trim().length > 0);
+
+          return (
+            <div
+              key={weekNumber}
+              className="mb-6 bg-gray-50 border border-gray-200 rounded-xl p-5 shadow-sm"
+            >
+              <h3 className="text-lg font-semibold text-blue-600 mb-3">
+                Week {weekNumber}
+              </h3>
+              <ul className="space-y-2 list-disc list-inside text-gray-700">
+                {lines.map((line, idx) => (
+                  <li key={idx} className="leading-relaxed">
+                    {line.replace(/^[-–]\s*/, "")}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
+
+      <div className="text-center mt-4">
+        <button
+          onClick={() => setShowRoadmap(false)}
+          className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
+      {/* Video Player Section */}
+      <h2 className="text-2xl font-bold mb-4">Your Personalized Roadmap - {serviceTitle}</h2>
+      <div className="max-w-4xl w-full bg-white shadow-lg rounded-2xl p-6">
         <h3 className="text-xl font-semibold mb-2">{weekName}</h3>
         <h4 className="text-lg font-medium mb-4">{topic.topic}</h4>
         <div className="aspect-w-16 aspect-h-9 mb-4">
