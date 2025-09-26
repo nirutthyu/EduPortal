@@ -4,6 +4,7 @@ import Home from "./components/Home"; // Ensure the correct capitalization
 import Login from "./components/login"; // Ensure the correct capitalization
 import Signup from "./components/Signup"; // Ensure the correct capitalization
 import VideoPage from "./components/courses/VideoPage";
+import VideoDetailPage from "./components/courses/VideoDetailPage"
 const App = () => {
   return (
     <Router>
@@ -12,6 +13,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/courses/:id" element={<VideoPage />} />
+        <Route path="/video-detail" element={<VideoDetailPage />} />
       </Routes>
     </Router>
   );

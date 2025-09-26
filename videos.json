@@ -2,80 +2,92 @@
   {
     "Week 1": [
       {
-        "topic": "HTML5 Semantic Markup & Best Practices",
-        "video": "https://www.youtube.com/watch?v=fhoDRB53DwY"
+        "topic": "Advanced JavaScript Concepts (ES202X+): Promises, Async/Await, Closures, `this` context, Prototypes, Module System (ESM)",
+        "video": "No video found"
       },
       {
-        "topic": "CSS3 Fundamentals (Selectors, Box Model, Positioning)",
-        "video": "https://www.youtube.com/watch?v=Xrxd6cEajhM"
+        "topic": "Deep Dive into a Modern Frontend Framework (e.g., React): Components, Props, State, JSX, Component Lifecycle, Virtual DOM",
+        "video": "https://www.youtube.com/watch?v=P5d6fzI3lqc"
       },
       {
-        "topic": "Introduction to JavaScript Fundamentals (Variables, Data Types, Operators)",
-        "video": "https://www.youtube.com/watch?v=PkZNo7MFNFg"
+        "topic": "React Hooks Mastery: useState, useEffect, useContext, useRef, useMemo, useCallback, Custom Hooks",
+        "video": "https://www.youtube.com/watch?v=TNhaISOUy6Q"
       },
       {
-        "topic": "Version Control with Git & GitHub",
-        "video": "https://www.youtube.com/watch?v=RGOj5yH7evk"
+        "topic": "Advanced CSS Strategies: CSS-in-JS (Styled Components/Emotion) or Utility-First (Tailwind CSS), CSS Modules, Advanced Responsive Design (Flexbox/Grid mastery), CSS Performance Optimization",
+        "video": "https://www.youtube.com/watch?v=lHZwlzOUOZ4"
       }
     ]
   },
   {
     "Week 2": [
       {
-        "topic": "Advanced CSS (Flexbox, Grid, Animations, Transitions)",
-        "video": "https://www.youtube.com/watch?v=phWxA89Dy94"
+        "topic": "React Ecosystem & Tooling: React Router (advanced routing, nested routes, protected routes), Error Boundaries",
+        "video": "No video found"
       },
       {
-        "topic": "JavaScript DOM Manipulation & Events",
-        "video": "https://www.youtube.com/watch?v=5fb2aPlgoys"
+        "topic": "Global State Management: Context API deep dive, Introduction to Redux Toolkit (or Zustand/Jotai for alternatives)",
+        "video": "https://www.youtube.com/watch?v=novnyCaa7To"
       },
       {
-        "topic": "Asynchronous JavaScript (Promises, Async/Await)",
-        "video": "https://www.youtube.com/watch?v=DHvZLI7Db8E"
+        "topic": "Efficient Data Fetching & Caching: React Query (TanStack Query) or SWR",
+        "video": "No video found"
       },
       {
-        "topic": "Introduction to a JavaScript Framework (React, Vue, or Angular - choose one)",
-        "video": "https://www.youtube.com/watch?v=N3AkSS5hXMA"
+        "topic": "Frontend Testing Best Practices: Unit testing with Jest/React Testing Library, Introduction to End-to-End testing (Cypress/Playwright)",
+        "video": "https://www.youtube.com/watch?v=scEDHsr3APg"
+      },
+      {
+        "topic": "Build Tools & Optimizations: Webpack/Vite Configuration (advanced features), Code Splitting, Lazy Loading, Image Optimization",
+        "video": "No video found"
       }
     ]
   },
   {
     "Week 3": [
       {
-        "topic": "Deep Dive into Chosen Framework (Components, State Management, Routing)",
-        "video": "https://www.youtube.com/watch?v=RLnsetuODbg"
+        "topic": "Node.js & Express.js API Development: RESTful API design, Advanced Routing, Middleware (authentication, logging, validation), Error Handling",
+        "video": "https://www.youtube.com/watch?v=zHykHw9JlhE"
       },
       {
-        "topic": "RESTful APIs and fetching data with JavaScript (Fetch API or Axios)",
-        "video": "https://www.youtube.com/watch?v=XGa4onZP66Q"
+        "topic": "Database Integration (SQL or NoSQL): PostgreSQL/MySQL with ORM (TypeORM/Prisma) OR MongoDB with ODM (Mongoose)",
+        "video": "https://www.youtube.com/watch?v=-bt_y4Loofg"
       },
       {
-        "topic": "Building a small project integrating frontend framework and API",
-        "video": "https://www.youtube.com/watch?v=XGa4onZP66Q"
+        "topic": "Database Schema Design, Advanced Queries, Migrations (for SQL)",
+        "video": "https://www.youtube.com/watch?v=HXV3zeQKqGY"
       },
       {
-        "topic": "Testing Fundamentals (Unit & Integration tests)",
-        "video": "https://www.youtube.com/watch?v=u6QfIXgjwGQ"
+        "topic": "Authentication & Authorization: JWT (JSON Web Tokens) implementation, OAuth 2.0 concepts, Role-Based Access Control",
+        "video": "https://www.youtube.com/watch?v=UBUNrFtufWo"
+      },
+      {
+        "topic": "Server-Side Testing: Unit and Integration testing for API routes and database interactions",
+        "video": "https://www.youtube.com/watch?v=yubzJw0uiE4"
       }
     ]
   },
   {
     "Week 4": [
       {
-        "topic": "Backend Introduction (Node.js with Express.js or similar, database selection)",
-        "video": "https://www.youtube.com/watch?v=iEyA1dXZs_M"
+        "topic": "Cloud Deployment & DevOps Fundamentals: Frontend deployment (Vercel/Netlify), Backend deployment (AWS EC2/Lambda/ECS, Heroku, Render), Docker basics for containerization",
+        "video": "No video found"
       },
       {
-        "topic": "Database design and interaction (SQL or NoSQL based on backend choice)",
-        "video": "https://www.youtube.com/watch?v=3JW732GrMdg"
+        "topic": "Continuous Integration/Continuous Deployment (CI/CD): Fundamentals with GitHub Actions or GitLab CI for automated workflows",
+        "video": "https://www.youtube.com/watch?v=R8_veQiYBjI"
       },
       {
-        "topic": "Deployment (Netlify, Vercel, Heroku, AWS - choose one)",
-        "video": "https://www.youtube.com/watch?v=x0KLkYCEvJg"
+        "topic": "Web Security Best Practices: OWASP Top 10, XSS, CSRF, SQL Injection prevention, Secure API design, Environmental Variables",
+        "video": "https://www.youtube.com/watch?v=dWVTfY6cMBs"
       },
       {
-        "topic": "Advanced Project: Building a more complex web application integrating frontend and backend",
-        "video": "https://www.youtube.com/watch?v=vP3TRAsjZss"
+        "topic": "Performance & Scalability: Caching strategies (Redis), Load Balancing concepts, Database Indexing, Monitoring Tools",
+        "video": "https://www.youtube.com/watch?v=4mv3wldxG8A"
+      },
+      {
+        "topic": "Full-Stack Project Consolidation: Architect and build a complete end-to-end application applying all learned concepts, focusing on clean architecture, best practices, and production readiness",
+        "video": "No video found"
       }
     ]
   }

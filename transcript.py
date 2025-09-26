@@ -4,7 +4,10 @@ import yt_dlp
 import speech_recognition as sr
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
+
+from supadata import Supadata
 import os,json,re
+import time
 app = Flask(__name__)
 CORS(app)
 from dotenv import load_dotenv
@@ -17,7 +20,7 @@ youtube = build('youtube', 'v3', developerKey=YOUTUBE_API_KEY)
 
 def get_gemini_response(input_prompt):
     response = client.models.generate_content(
-        model="gemini-1.5-flash",
+        model="gemini-2.5-flash",
         contents=input_prompt
     )
 
@@ -30,66 +33,20 @@ def get_gemini_response(input_prompt):
         return candidate_content
     except Exception as e:
         raise ValueError(f"Error extracting or parsing response: {e}")
+    
+from flask import request, jsonify
 
-    
-def download_audio(video_id, output_file="youtube_audio.wav"):
-    url = f"https://www.youtube.com/watch?v={video_id}"
-    
-    ydl_opts = {
-        "format": "bestaudio/best",
-        "outtmpl": "temp_audio.%(ext)s",
-        "postprocessors": [
-            {
-                "key": "FFmpegExtractAudio",
-                "preferredcodec": "wav",
-                "preferredquality": "192",
-            }
-        ],
-        "quiet": True,
-    }
-    
-    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        ydl.download([url])
-    
-    os.rename("temp_audio.wav", output_file)
-    return output_file
-
-def transcribe_audio_in_chunks(audio_file, chunk_length=60):
-    recognizer = sr.Recognizer()
-    full_transcript = []
-    
-    with sr.AudioFile(audio_file) as source:
-        total_duration = int(source.DURATION)
-        offset = 0
-        
-        while offset < total_duration:
-            audio_chunk = recognizer.record(source, duration=chunk_length)
-            
-            try:
-                text = recognizer.recognize_google(audio_chunk)
-                print(text)
-                full_transcript.append(text)
-            except sr.UnknownValueError:
-                full_transcript.append("[Unintelligible]")
-            except sr.RequestError as e:
-                full_transcript.append(f"[API error: {e}]")
-            
-            offset += chunk_length
-    
-    return " ".join(full_transcript)
-
-def get_transcript(video_id):
-    audio_file = download_audio(video_id)
-    transcript = transcribe_audio_in_chunks(audio_file)
-    print("transcript fetched")
-    os.remove(audio_file)
-    return transcript  # just return string
-    
-@app.route("/summarize/<video_id>", methods=["GET"])
-def summarize(video_id):
+@app.route("/summarize", methods=["POST"])
+def summarize():
     try:
-        transcript = get_transcript(video_id)
-        print("transcript:"+transcript)
+        data = request.get_json()
+        transcript = data.get("transcript")
+
+        if not transcript:
+            return jsonify({"error": "Transcript not provided"}), 400
+
+        print("transcript:", transcript)
+
         prompt = f"""
 You are an intelligent tutor helping a user learn efficiently. 
 Here is the transcript of a YouTube video:
@@ -98,15 +55,22 @@ Here is the transcript of a YouTube video:
 
 Based on this transcript, please do the following:
 
-1. Provide a **concise summary** of the content in simple language that covers all contents of the video."""
+1. Provide a summary of the content in simple language that covers all contents of the video so that the user does not even have to view the video.
+"""
+
         summary = get_gemini_response(prompt)
+
         return jsonify({
-        "video_id": video_id,
-        "summary": summary
+            "summary": summary
         })
+
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+
+supadata = Supadata(api_key="sd_8a5d95a2b1f30547a20d04b952380243")
+import google.generativeai as genai
+# ---------------- ROADMAP GENERATION ----------------
 def generate_roadmap(formData):
     prmpt = f""" You are an expert educational consultant. A student of age {formData['age']} wants to learn {formData['subject']}. 
     The student has a {formData['level']} level of knowledge in this subject and has {formData['experience']} prior experience. 
@@ -125,9 +89,12 @@ def generate_roadmap(formData):
     Only the roadmap is required. Do not include any additional information or explanations.
     """
 
-    roadmap=get_gemini_response(prmpt)
-    return roadmap
+    model = genai.GenerativeModel("gemini-2.5-flash")
+    response = model.generate_content(prmpt)
+    return response.text
 
+
+# ---------------- PARSE ROADMAP ----------------
 def parse_roadmap(roadmap):
     weeks = {}
     current_week = None
@@ -141,6 +108,8 @@ def parse_roadmap(roadmap):
             weeks[current_week].append(topic)
     return weeks
 
+
+# ---------------- YOUTUBE HELPERS ----------------
 def get_video_details(query, max_results=10, retries=3, delay=2):
     video_details = []
     results_count = 0
@@ -201,6 +170,7 @@ def get_video_details(query, max_results=10, retries=3, delay=2):
                 raise
     return video_details
 
+
 def get_best_video(topic):
     video_list = get_video_details(topic, max_results=10)
     if not video_list:
@@ -224,13 +194,58 @@ def build_weekly_json(roadmap):
         result.append({week: week_data})
     return result
 
+def generate_mcq(transcript: str):
+    prmpt=f"""You are an expert educational consultant.A student have given a video transcript and wants to create a multiple-choice quiz based on it.
+    This is the transcript: {transcript}
+    Create a multiple-choice quiz with 10 questions. Each question should have 4 options.
+    The quiz should be structured in the following format:
+    Question 1: Question
+    a) Option 1 
+    b) Option 2
+    c) Option 3
+    d) Option 4
+    Correct Answer: Answer
+
+    Only the quiz is required. Do not include any additional information or explanations.
+    """
+
+    model = genai.GenerativeModel("gemini-2.5-flash")
+    response = model.generate_content(prmpt)
+    print(response.text)
+    return response.text
+
+
+def parse_to_json(quiz_text: str):
+    quiz_data = []
+    blocks = re.split(r"Question \d+:", quiz_text)
+    for block in blocks:
+        block = block.strip()
+        if not block:
+            continue
+
+        lines = block.splitlines()
+        if len(lines) < 5:
+            continue
+
+        question = lines[0].strip()
+        options = [line.strip().split(" ", 1)[1] for line in lines[1:5]]
+        answer_line = [line for line in lines if line.startswith("Correct Answer")]
+        answer = answer_line[0].split(":", 1)[1].strip() if answer_line else ""
+
+        quiz_data.append({
+            "question": question,
+            "options": options,
+            "answer": answer
+        })
+    return quiz_data
+
+# ---------------- FLASK ENDPOINT ----------------
 @app.route('/generate-roadmap', methods=['POST'])
 def generate():
     try:
         formData = request.json  # incoming JSON from React
         roadmap = generate_roadmap(formData)
         final_output = build_weekly_json(roadmap)
-        print(final_output)
 
         # Save as JSON file
         with open("videos.json", "w", encoding="utf-8") as f:
@@ -242,6 +257,61 @@ def generate():
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@app.route("/get-transcript", methods=["POST"])
+def get_transcript():
+    try:
+        data = request.get_json()
+        if not data or "url" not in data:
+            return jsonify({"error": "URL is required"}), 400
+
+        url = data["url"]
+        transcript = supadata.transcript(
+            url=url,
+            lang="en",  
+            text=True,  
+            mode="auto"  
+        )
+        if hasattr(transcript, "content"):
+            print(transcript.content)
+            print(url)
+            return jsonify({
+                "url": url,
+                "transcript": transcript.content,
+                "language": transcript.lang
+            })
+        else:
+            return jsonify({
+                "message": "Transcript is being processed",
+                "job_id": transcript.job_id
+            })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
     
-if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+
+@app.route("/generate-mcq", methods=["POST"])
+def generate_mcq_api():
+    try:
+        data = request.get_json()
+        transcript = data.get("transcript", "")
+
+        if not transcript.strip():
+            return jsonify({"error": "Transcript is required"}), 400
+
+        quiz_text = generate_mcq(transcript)
+        quiz_json = parse_to_json(quiz_text)
+
+        # Save to mcq.json
+        with open("mcq.json", "w", encoding="utf-8") as f:
+            json.dump(quiz_json, f, indent=2, ensure_ascii=False)
+
+        return jsonify(quiz_json)
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
