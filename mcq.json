@@ -1,0 +1,102 @@
+[
+  {
+    "question": "The speaker highlights a significant disadvantage of using Artificial Neural Networks (ANNs) for image recognition, especially with large images. What is this primary disadvantage?",
+    "options": [
+      "ANNs struggle with introducing non-linearity into the model.",
+      "ANNs require too many pooling layers, making them slow.",
+      "ANNs treat local pixels the same as pixels far apart, and involve too much computation.",
+      "ANNs cannot be used for classification tasks."
+    ],
+    "answer": "c) ANNs treat local pixels the same as pixels far apart, and involve too much computation."
+  },
+  {
+    "question": "According to the speaker, how do humans typically recognize an image like a koala's face?",
+    "options": [
+      "By analyzing the entire image at once in a single step.",
+      "By detecting small, specific features (like eyes, nose, ears) and then aggregating them into larger patterns.",
+      "By flattening the entire image into a one-dimensional array before processing.",
+      "By using a dense network that connects every neuron to every other neuron."
+    ],
+    "answer": "b) By detecting small, specific features (like eyes, nose, ears) and then aggregating them into larger patterns."
+  },
+  {
+    "question": "What is the primary function of \"filters\" or \"convolution operations\" in a CNN's feature extraction phase?",
+    "options": [
+      "To flatten a 2D image into a 1D array for classification.",
+      "To introduce non-linearity into the model by converting negative values to zero.",
+      "To detect specific features (like edges, eyes, noses) within an image and generate feature maps.",
+      "To reduce the dimensionality of the image and prevent overfitting."
+    ],
+    "answer": "c) To detect specific features (like edges, eyes, noses) within an image and generate feature maps."
+  },
+  {
+    "question": "One of the key benefits of the convolution operation, especially when combined with pooling, is that it enables \"location invariant feature detection.\" What does this mean?",
+    "options": [
+      "It ensures that the computer only recognizes features located in the center of an image.",
+      "It means the detected features will always be in the same exact pixel location regardless of input.",
+      "It allows the network to detect a feature (e.g., an eye) regardless of where it appears in the image.",
+      "It makes the feature maps two-dimensional, preventing them from becoming three-dimensional."
+    ],
+    "answer": "c) It allows the network to detect a feature (e.g., an eye) regardless of where it appears in the image."
+  },
+  {
+    "question": "What is the main role of the Rectified Linear Unit (ReLU) activation function in a Convolutional Neural Network?",
+    "options": [
+      "To perform max pooling operations to reduce image size.",
+      "To flatten the 2D feature maps into a 1D array.",
+      "To introduce non-linearity into the model and speed up training.",
+      "To calculate the weights between the input and hidden layers."
+    ],
+    "answer": "c) To introduce non-linearity into the model and speed up training."
+  },
+  {
+    "question": "Which of the following is a primary advantage of using pooling layers in a CNN, as described by the speaker?",
+    "options": [
+      "It increases the number of parameters to improve model accuracy.",
+      "It enhances the resolution of feature maps for finer detail detection.",
+      "It reduces the dimension and computation, and helps in reducing overfitting.",
+      "It converts all negative values in the feature map to positive values."
+    ],
+    "answer": "c) It reduces the dimension and computation, and helps in reducing overfitting."
+  },
+  {
+    "question": "What is the typical sequence of operations within a single \"layer\" of the feature extraction part of a Convolutional Neural Network, as described in the summary?",
+    "options": [
+      "Pooling -> ReLU -> Convolution",
+      "Convolution -> ReLU -> Pooling",
+      "ReLU -> Pooling -> Convolution",
+      "Flatten -> Convolution -> ReLU"
+    ],
+    "answer": "b) Convolution -> ReLU -> Pooling"
+  },
+  {
+    "question": "The speaker mentions \"parameter sharing\" as a benefit of the convolution operation. What does this concept imply?",
+    "options": [
+      "That all filters within a CNN share the exact same parameter values.",
+      "That the parameters (weights) learned for a filter can be applied across the entire image.",
+      "That the network automatically shares parameters with other CNN models.",
+      "That the input image shares its pixel values with the filter."
+    ],
+    "answer": "b) That the parameters (weights) learned for a filter can be applied across the entire image."
+  },
+  {
+    "question": "How does the speaker suggest handling issues like rotation and varying thickness of objects (e.g., handwritten digits) in a CNN, since CNNs by themselves cannot handle them?",
+    "options": [
+      "By using only max pooling layers and no average pooling.",
+      "By specifying exact filter values for rotated and thick features.",
+      "By using data augmentation techniques to generate new training samples with varied rotations and scales.",
+      "By significantly increasing the number of dense layers in the classification part."
+    ],
+    "answer": "c) By using data augmentation techniques to generate new training samples with varied rotations and scales."
+  },
+  {
+    "question": "What is the most fascinating aspect about the filters used in Convolutional Neural Networks, according to the speaker?",
+    "options": [
+      "They are manually designed by human experts to detect specific features.",
+      "The network automatically learns the values within these filters during training using backpropagation.",
+      "They are fixed predefined patterns that never change.",
+      "They are randomly generated for each new image processed by the network."
+    ],
+    "answer": "b) The network automatically learns the values within these filters during training using backpropagation."
+  }
+]

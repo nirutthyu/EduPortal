@@ -29,7 +29,9 @@ const VideoPage = () => {
   const [showSummary, setShowSummary] = useState(false);
   const [showQuiz, setShowQuiz] = useState(false);
   const [showDoubt, setShowDoubt] = useState(false);
-  
+  const [mcqs, setMcqs] = useState([])
+  const [answers, setAnswers] = useState({});
+  const [score, setScore] = useState(null);
   // New transcript-related state
   const [transcript, setTranscript] = useState("");
   console.log(transcript)
@@ -40,6 +42,34 @@ const VideoPage = () => {
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+  const handleAnswerSelect = (questionIndex, selectedOption) => {
+  setAnswers((prev) => ({
+    ...prev,
+    [questionIndex]: selectedOption,
+  }));
+};
+
+const normalize = (str) =>
+  String(str).replace(/`/g, "").trim().toLowerCase();
+
+const calculateScore = () => {
+  let newScore = 0;
+
+  mcqs.forEach((mcq, index) => {
+    const selected = answers[index];
+    if (!selected) return; // skip unanswered
+
+    // extract just the option text from "c) `useState`"
+    let correctAnswer = mcq.answer.replace(/^[a-dA-D]\)\s*/, ""); 
+
+    if (normalize(selected) === normalize(correctAnswer)) {
+      newScore++;
+    }
+  });
+
+  setScore(newScore);
+};
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -193,12 +223,34 @@ const handleSummarize = async () => {
       }
     }
   };
-  const handleQuiz = () => {
+const handleQuiz = async () => {
+  try {
+    // update UI state
     setShowQuiz(true);
     setShowSummary(false);
     setShowDoubt(false);
     setShowTranscript(false);
-  };
+
+    // send transcript to backend
+    const response = await fetch("http://localhost:5000/generate-mcq", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ transcript }), // assuming transcript is in state
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch quiz");
+    }
+
+    const data = await response.json();
+    setMcqs(data); // update mcqs state with backend response
+  } catch (error) {
+    console.error("Error generating quiz:", error);
+  }
+};
+
 
   const handleDoubt = () => {
     setShowDoubt(true);
@@ -481,14 +533,55 @@ const handleSummarize = async () => {
                 )}
               </div>
             )}
+{showQuiz && (
+  <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
+    <h3 className="text-xl font-semibold mb-4">Quiz</h3>
 
-            {showQuiz && (
-              <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
-                <h3 className="text-xl font-semibold mb-4">Quiz</h3>
-                <p className="text-gray-600">Quiz feature coming soon! Test your knowledge on:</p>
-                <p className="font-medium mt-2">{currentVideoData?.topic}</p>
-              </div>
-            )}
+    {mcqs.length > 0 ? (
+      <div>
+        {mcqs.map((mcq, index) => (
+          <div key={index} className="mb-6">
+            <p className="font-medium mb-2">
+              {index + 1}. {mcq.question}
+            </p>
+            <div className="space-y-2">
+              {mcq.options.map((option, i) => (
+                <label
+                  key={i}
+                  className="flex items-center p-2 border rounded cursor-pointer hover:bg-gray-50"
+                >
+                  <input
+                    type="radio"
+                    name={`q-${index}`}
+                    value={option}
+                    onChange={() => handleAnswerSelect(index, option)}
+                    className="mr-2"
+                  />
+                  {option}
+                </label>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        <button
+          onClick={calculateScore}
+          className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Submit Quiz
+        </button>
+
+        {score !== null && (
+          <div className="mt-4 text-lg font-semibold text-green-600">
+            Your Score: {score}/{mcqs.length}
+          </div>
+        )}
+      </div>
+    ) : (
+      <p className="text-gray-600">Loading quiz...</p>
+    )}
+  </div>
+)}
 
             {showDoubt && (
               <div className="bg-white rounded-lg shadow-lg p-6 mb-6">

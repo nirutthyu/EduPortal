@@ -2,92 +2,116 @@
   {
     "Week 1": [
       {
-        "topic": "Advanced JavaScript Concepts (ES202X+): Promises, Async/Await, Closures, `this` context, Prototypes, Module System (ESM)",
+        "topic": "Advanced Convolutional Neural Networks (ResNet, Inception, DenseNet, EfficientNet)",
+        "video": "https://www.youtube.com/watch?v=zfiSAzpy9NM"
+      },
+      {
+        "topic": "Attention Mechanisms and Self-Attention",
+        "video": "https://www.youtube.com/watch?v=eMlx5fFNoYc"
+      },
+      {
+        "topic": "Transformer Architecture Fundamentals (Encoder-Decoder)",
+        "video": "https://www.youtube.com/watch?v=wjZofJX0v4M"
+      },
+      {
+        "topic": "Advanced Optimization Algorithms (AdamW, RAdam, LookAhead, SWA)",
         "video": "No video found"
       },
       {
-        "topic": "Deep Dive into a Modern Frontend Framework (e.g., React): Components, Props, State, JSX, Component Lifecycle, Virtual DOM",
-        "video": "https://www.youtube.com/watch?v=P5d6fzI3lqc"
+        "topic": "Transfer Learning Strategies and Fine-tuning Techniques",
+        "video": "https://www.youtube.com/watch?v=SQ3fZ1sAqXI"
       },
       {
-        "topic": "React Hooks Mastery: useState, useEffect, useContext, useRef, useMemo, useCallback, Custom Hooks",
-        "video": "https://www.youtube.com/watch?v=TNhaISOUy6Q"
-      },
-      {
-        "topic": "Advanced CSS Strategies: CSS-in-JS (Styled Components/Emotion) or Utility-First (Tailwind CSS), CSS Modules, Advanced Responsive Design (Flexbox/Grid mastery), CSS Performance Optimization",
-        "video": "https://www.youtube.com/watch?v=lHZwlzOUOZ4"
+        "topic": "Introduction to Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs)",
+        "video": "https://www.youtube.com/watch?v=9zKuYvjFFS8"
       }
     ]
   },
   {
     "Week 2": [
       {
-        "topic": "React Ecosystem & Tooling: React Router (advanced routing, nested routes, protected routes), Error Boundaries",
-        "video": "No video found"
+        "topic": "Deep Dive into GANs (Conditional GANs, CycleGAN, StyleGAN)",
+        "video": "https://www.youtube.com/watch?v=OC0oe1EzQxo"
       },
       {
-        "topic": "Global State Management: Context API deep dive, Introduction to Redux Toolkit (or Zustand/Jotai for alternatives)",
-        "video": "https://www.youtube.com/watch?v=novnyCaa7To"
+        "topic": "Introduction to Diffusion Models (DDPM, Latent Diffusion)",
+        "video": "https://www.youtube.com/watch?v=HoKDTa5jHvg"
       },
       {
-        "topic": "Efficient Data Fetching & Caching: React Query (TanStack Query) or SWR",
-        "video": "No video found"
+        "topic": "Transformer-based NLP Models (BERT, GPT, T5, RoBERTa)",
+        "video": "https://www.youtube.com/watch?v=SZorAJ4I-sA"
       },
       {
-        "topic": "Frontend Testing Best Practices: Unit testing with Jest/React Testing Library, Introduction to End-to-End testing (Cypress/Playwright)",
-        "video": "https://www.youtube.com/watch?v=scEDHsr3APg"
+        "topic": "Fine-tuning Large Language Models (LLMs) for specific tasks",
+        "video": "https://www.youtube.com/watch?v=bZcKYiwtw1I"
       },
       {
-        "topic": "Build Tools & Optimizations: Webpack/Vite Configuration (advanced features), Code Splitting, Lazy Loading, Image Optimization",
-        "video": "No video found"
+        "topic": "Prompt Engineering and In-context Learning",
+        "video": "https://www.youtube.com/watch?v=jC4v5AS4RIM"
+      },
+      {
+        "topic": "Text Generation and Summarization Techniques",
+        "video": "https://www.youtube.com/watch?v=aSxxSXqWDQI"
       }
     ]
   },
   {
     "Week 3": [
       {
-        "topic": "Node.js & Express.js API Development: RESTful API design, Advanced Routing, Middleware (authentication, logging, validation), Error Handling",
-        "video": "https://www.youtube.com/watch?v=zHykHw9JlhE"
+        "topic": "Reinforcement Learning Fundamentals (MDPs, Bellman Equations, Value/Policy Iteration)",
+        "video": "https://www.youtube.com/watch?v=zC8jkmlCDCU"
       },
       {
-        "topic": "Database Integration (SQL or NoSQL): PostgreSQL/MySQL with ORM (TypeORM/Prisma) OR MongoDB with ODM (Mongoose)",
-        "video": "https://www.youtube.com/watch?v=-bt_y4Loofg"
+        "topic": "Model-Free RL Algorithms (Q-Learning, SARSA, Policy Gradients, Actor-Critic Methods)",
+        "video": "https://www.youtube.com/watch?v=AINrxEjflaM"
       },
       {
-        "topic": "Database Schema Design, Advanced Queries, Migrations (for SQL)",
-        "video": "https://www.youtube.com/watch?v=HXV3zeQKqGY"
+        "topic": "Advanced RL (PPO, DDPG, SAC)",
+        "video": "https://www.youtube.com/watch?v=gFyJeD54dBs"
       },
       {
-        "topic": "Authentication & Authorization: JWT (JSON Web Tokens) implementation, OAuth 2.0 concepts, Role-Based Access Control",
-        "video": "https://www.youtube.com/watch?v=UBUNrFtufWo"
+        "topic": "Introduction to Graph Neural Networks (GNNs)",
+        "video": "https://www.youtube.com/watch?v=GXhBEj1ZtE8"
       },
       {
-        "topic": "Server-Side Testing: Unit and Integration testing for API routes and database interactions",
-        "video": "https://www.youtube.com/watch?v=yubzJw0uiE4"
+        "topic": "Explainable AI (XAI) Techniques (LIME, SHAP, Integrated Gradients)",
+        "video": "https://www.youtube.com/watch?v=MQ6fFDwjuco"
+      },
+      {
+        "topic": "Ethical AI Principles and Bias Mitigation Strategies",
+        "video": "https://www.youtube.com/watch?v=AOfAEQ3bMWk"
       }
     ]
   },
   {
     "Week 4": [
       {
-        "topic": "Cloud Deployment & DevOps Fundamentals: Frontend deployment (Vercel/Netlify), Backend deployment (AWS EC2/Lambda/ECS, Heroku, Render), Docker basics for containerization",
-        "video": "No video found"
+        "topic": "MLOps Fundamentals: Data Versioning (DVC), Model Versioning, Experiment Tracking (MLflow, Weights & Biases)",
+        "video": "https://www.youtube.com/watch?v=jIiBaYvsM60"
       },
       {
-        "topic": "Continuous Integration/Continuous Deployment (CI/CD): Fundamentals with GitHub Actions or GitLab CI for automated workflows",
-        "video": "https://www.youtube.com/watch?v=R8_veQiYBjI"
+        "topic": "CI/CD for Machine Learning Pipelines",
+        "video": "https://www.youtube.com/watch?v=scEDHsr3APg"
       },
       {
-        "topic": "Web Security Best Practices: OWASP Top 10, XSS, CSRF, SQL Injection prevention, Secure API design, Environmental Variables",
-        "video": "https://www.youtube.com/watch?v=dWVTfY6cMBs"
+        "topic": "Model Deployment Strategies (Containerization with Docker, API with Flask/FastAPI)",
+        "video": "https://www.youtube.com/watch?v=0sOvCWFmrtA"
       },
       {
-        "topic": "Performance & Scalability: Caching strategies (Redis), Load Balancing concepts, Database Indexing, Monitoring Tools",
-        "video": "https://www.youtube.com/watch?v=4mv3wldxG8A"
+        "topic": "Cloud ML Platforms (AWS SageMaker, GCP AI Platform, Azure ML services)",
+        "video": "https://www.youtube.com/watch?v=JIbIYCM48to"
       },
       {
-        "topic": "Full-Stack Project Consolidation: Architect and build a complete end-to-end application applying all learned concepts, focusing on clean architecture, best practices, and production readiness",
-        "video": "No video found"
+        "topic": "Serverless ML and Edge AI Concepts",
+        "video": "https://www.youtube.com/watch?v=tczjZOLVjJM"
+      },
+      {
+        "topic": "Multimodal AI and Foundation Models",
+        "video": "https://www.youtube.com/watch?v=LPZh9BOjkQs"
+      },
+      {
+        "topic": "Responsible AI Development and Governance",
+        "video": "https://www.youtube.com/watch?v=TAYJJFojwbI"
       }
     ]
   }
