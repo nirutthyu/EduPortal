@@ -1,102 +1,102 @@
 [
   {
-    "question": "The speaker highlights a significant disadvantage of using Artificial Neural Networks (ANNs) for image recognition, especially with large images. What is this primary disadvantage?",
+    "question": "According to the video, what is the primary goal of machine learning as a subdomain of computer science?",
     "options": [
-      "ANNs struggle with introducing non-linearity into the model.",
-      "ANNs require too many pooling layers, making them slow.",
-      "ANNs treat local pixels the same as pixels far apart, and involve too much computation.",
-      "ANNs cannot be used for classification tasks."
+      "To explicitly program computers to perform human-like tasks.",
+      "To enable computers to learn from data without explicit programming, making predictions.",
+      "To solely focus on creating artificial intelligence systems that simulate human behavior.",
+      "To manage and store large datasets for analytical purposes."
     ],
-    "answer": "c) ANNs treat local pixels the same as pixels far apart, and involve too much computation."
+    "answer": "b) To enable computers to learn from data without explicit programming, making predictions."
   },
   {
-    "question": "According to the speaker, how do humans typically recognize an image like a koala's face?",
+    "question": "When preparing a dataset for supervised machine learning, what are the three standard subsets the data is typically divided into?",
     "options": [
-      "By analyzing the entire image at once in a single step.",
-      "By detecting small, specific features (like eyes, nose, ears) and then aggregating them into larger patterns.",
-      "By flattening the entire image into a one-dimensional array before processing.",
-      "By using a dense network that connects every neuron to every other neuron."
+      "Input, Output, and Control",
+      "Training, Validation, and Deployment",
+      "Training, Validation, and Testing",
+      "Feature, Label, and Sample"
     ],
-    "answer": "b) By detecting small, specific features (like eyes, nose, ears) and then aggregating them into larger patterns."
+    "answer": "c) Training, Validation, and Testing"
   },
   {
-    "question": "What is the primary function of \"filters\" or \"convolution operations\" in a CNN's feature extraction phase?",
+    "question": "What is the primary purpose of \"scaling\" features in a dataset, as demonstrated with the Magic Gamma Telescope data?",
     "options": [
-      "To flatten a 2D image into a 1D array for classification.",
-      "To introduce non-linearity into the model by converting negative values to zero.",
-      "To detect specific features (like edges, eyes, noses) within an image and generate feature maps.",
-      "To reduce the dimensionality of the image and prevent overfitting."
+      "To convert qualitative features into quantitative ones.",
+      "To ensure all feature values are between 0 and 1.",
+      "To make features relative to their mean and standard deviation, preventing scale differences from affecting results.",
+      "To increase the number of samples in the minority class."
     ],
-    "answer": "c) To detect specific features (like edges, eyes, noses) within an image and generate feature maps."
+    "answer": "c) To make features relative to their mean and standard deviation, preventing scale differences from affecting results."
   },
   {
-    "question": "One of the key benefits of the convolution operation, especially when combined with pooling, is that it enables \"location invariant feature detection.\" What does this mean?",
+    "question": "In the K-Nearest Neighbors (KNN) algorithm, what does the 'K' represent?",
     "options": [
-      "It ensures that the computer only recognizes features located in the center of an image.",
-      "It means the detected features will always be in the same exact pixel location regardless of input.",
-      "It allows the network to detect a feature (e.g., an eye) regardless of where it appears in the image.",
-      "It makes the feature maps two-dimensional, preventing them from becoming three-dimensional."
+      "The number of features used for classification.",
+      "The total number of data points in the dataset.",
+      "The number of closest neighbors considered to determine a new point's label.",
+      "The specific distance function used to measure similarity between points."
     ],
-    "answer": "c) It allows the network to detect a feature (e.g., an eye) regardless of where it appears in the image."
+    "answer": "c) The number of closest neighbors considered to determine a new point's label."
   },
   {
-    "question": "What is the main role of the Rectified Linear Unit (ReLU) activation function in a Convolutional Neural Network?",
+    "question": "What is the \"naive\" assumption made by the Naive Bayes classification algorithm?",
     "options": [
-      "To perform max pooling operations to reduce image size.",
-      "To flatten the 2D feature maps into a 1D array.",
-      "To introduce non-linearity into the model and speed up training.",
-      "To calculate the weights between the input and hidden layers."
+      "That all features are equally important for prediction.",
+      "That the probability of each feature occurring is dependent on all other features.",
+      "That all features are independent of each other given the class.",
+      "That the dataset is perfectly balanced across all classes."
     ],
-    "answer": "c) To introduce non-linearity into the model and speed up training."
+    "answer": "c) That all features are independent of each other given the class."
   },
   {
-    "question": "Which of the following is a primary advantage of using pooling layers in a CNN, as described by the speaker?",
+    "question": "According to the video, what is the main objective of a Support Vector Machine (SVM) model?",
     "options": [
-      "It increases the number of parameters to improve model accuracy.",
-      "It enhances the resolution of feature maps for finer detail detection.",
-      "It reduces the dimension and computation, and helps in reducing overfitting.",
-      "It converts all negative values in the feature map to positive values."
+      "To find a line that passes through the most data points.",
+      "To identify and remove outliers from the dataset.",
+      "To find a hyperplane that best divides the data while maximizing the margin between classes.",
+      "To assign new data points to the closest existing cluster."
     ],
-    "answer": "c) It reduces the dimension and computation, and helps in reducing overfitting."
+    "answer": "c) To find a hyperplane that best divides the data while maximizing the margin between classes."
   },
   {
-    "question": "What is the typical sequence of operations within a single \"layer\" of the feature extraction part of a Convolutional Neural Network, as described in the summary?",
+    "question": "What is the primary role of \"activation functions\" within a neural network's neurons?",
     "options": [
-      "Pooling -> ReLU -> Convolution",
-      "Convolution -> ReLU -> Pooling",
-      "ReLU -> Pooling -> Convolution",
-      "Flatten -> Convolution -> ReLU"
+      "To increase the number of input features to the network.",
+      "To introduce non-linearity, preventing the entire network from collapsing into a linear model.",
+      "To control the learning rate during the backpropagation process.",
+      "To normalize the input data before it reaches the first hidden layer."
     ],
-    "answer": "b) Convolution -> ReLU -> Pooling"
+    "answer": "b) To introduce non-linearity, preventing the entire network from collapsing into a linear model."
   },
   {
-    "question": "The speaker mentions \"parameter sharing\" as a benefit of the convolution operation. What does this concept imply?",
+    "question": "Which evaluation metric is commonly used in regression models and is beneficial because its units directly match the units of the predicted output?",
     "options": [
-      "That all filters within a CNN share the exact same parameter values.",
-      "That the parameters (weights) learned for a filter can be applied across the entire image.",
-      "That the network automatically shares parameters with other CNN models.",
-      "That the input image shares its pixel values with the filter."
+      "Mean Squared Error (MSE)",
+      "R-squared (Coefficient of Determination)",
+      "Root Mean Squared Error (RMSE)",
+      "Binary Cross Entropy Loss"
     ],
-    "answer": "b) That the parameters (weights) learned for a filter can be applied across the entire image."
+    "answer": "c) Root Mean Squared Error (RMSE)"
   },
   {
-    "question": "How does the speaker suggest handling issues like rotation and varying thickness of objects (e.g., handwritten digits) in a CNN, since CNNs by themselves cannot handle them?",
+    "question": "In K-Means clustering, what is the \"maximization step\" of the expectation-maximization process?",
     "options": [
-      "By using only max pooling layers and no average pooling.",
-      "By specifying exact filter values for rotated and thick features.",
-      "By using data augmentation techniques to generate new training samples with varied rotations and scales.",
-      "By significantly increasing the number of dense layers in the classification part."
+      "Choosing the initial random centroids for the clusters.",
+      "Recalculating the centroids based on the current cluster assignments.",
+      "Assigning each data point to its closest centroid.",
+      "Determining the optimal number of clusters (K)."
     ],
-    "answer": "c) By using data augmentation techniques to generate new training samples with varied rotations and scales."
+    "answer": "b) Recalculating the centroids based on the current cluster assignments."
   },
   {
-    "question": "What is the most fascinating aspect about the filters used in Convolutional Neural Networks, according to the speaker?",
+    "question": "What is the main purpose of Principal Component Analysis (PCA) in unsupervised learning?",
     "options": [
-      "They are manually designed by human experts to detect specific features.",
-      "The network automatically learns the values within these filters during training using backpropagation.",
-      "They are fixed predefined patterns that never change.",
-      "They are randomly generated for each new image processed by the network."
+      "To classify data points into predefined categories.",
+      "To identify and group similar data points into clusters.",
+      "To reduce the dimensionality of data by finding directions with the largest variance.",
+      "To predict a continuous numerical value based on input features."
     ],
-    "answer": "b) The network automatically learns the values within these filters during training using backpropagation."
+    "answer": "c) To reduce the dimensionality of data by finding directions with the largest variance."
   }
 ]

@@ -87,13 +87,22 @@ const VideoPage = () => {
       alert('No video available for summarization');
       return;
     }
+    // Check if transcript is available
+    if (!transcript) {
+      alert('Transcript not available yet. Please wait for transcript to load or try again.');
+      return;
+    }
 
-    const videoId = currentVideoData.video.split("v=")[1]?.split("&")[0];
     setLoadingSummary(true);
     setShowSummary(true);
 
     try {
-      const res = await fetch(`http://127.0.0.1:5000/summarize/${videoId}`);
+      const res = await fetch("http://127.0.0.1:5000/summarize", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ transcript: transcript,summaryType:formData.summaryType }),
+      });
+      
       const data = await res.json();
       if (res.ok) {
         setSummary(data.summary);

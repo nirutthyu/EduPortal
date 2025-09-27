@@ -2,116 +2,132 @@
   {
     "Week 1": [
       {
-        "topic": "Advanced Convolutional Neural Networks (ResNet, Inception, DenseNet, EfficientNet)",
-        "video": "https://www.youtube.com/watch?v=zfiSAzpy9NM"
+        "topic": "Web Fundamentals: How the Internet and Web Works (HTTP, DNS, Client-Server Model)",
+        "video": "https://www.youtube.com/watch?v=mpQZVYPuDGU"
       },
       {
-        "topic": "Attention Mechanisms and Self-Attention",
-        "video": "https://www.youtube.com/watch?v=eMlx5fFNoYc"
+        "topic": "HTML5: Semantic Structure, Common Tags, Forms, Accessibility Basics",
+        "video": "https://www.youtube.com/watch?v=1_d4_IyVrtE"
       },
       {
-        "topic": "Transformer Architecture Fundamentals (Encoder-Decoder)",
-        "video": "https://www.youtube.com/watch?v=wjZofJX0v4M"
+        "topic": "CSS3: Selectors, Box Model, Display Properties, Positioning, Flexbox (Deep Dive)",
+        "video": "https://www.youtube.com/watch?v=phWxA89Dy94"
       },
       {
-        "topic": "Advanced Optimization Algorithms (AdamW, RAdam, LookAhead, SWA)",
-        "video": "No video found"
+        "topic": "CSS3: Grid (Introduction), Responsive Design (Media Queries, Mobile-First)",
+        "video": "https://www.youtube.com/watch?v=WTz4A8IdeEQ"
       },
       {
-        "topic": "Transfer Learning Strategies and Fine-tuning Techniques",
-        "video": "https://www.youtube.com/watch?v=SQ3fZ1sAqXI"
+        "topic": "Developer Tools: Inspecting and Debugging HTML/CSS in Browser",
+        "video": "https://www.youtube.com/watch?v=2h0OtWCGStg"
       },
       {
-        "topic": "Introduction to Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs)",
-        "video": "https://www.youtube.com/watch?v=9zKuYvjFFS8"
+        "topic": "Version Control: Git Basics (init, add, commit, push to GitHub)",
+        "video": "https://www.youtube.com/watch?v=Ez8F0nW6S-w"
+      },
+      {
+        "topic": "Project: Build a Complex, Responsive Static Website",
+        "video": "https://www.youtube.com/watch?v=oYRda7UtuhA"
       }
     ]
   },
   {
     "Week 2": [
       {
-        "topic": "Deep Dive into GANs (Conditional GANs, CycleGAN, StyleGAN)",
-        "video": "https://www.youtube.com/watch?v=OC0oe1EzQxo"
+        "topic": "JavaScript Core: Variables, Data Types, Operators, Control Flow (if/else, loops)",
+        "video": "https://www.youtube.com/watch?v=Zg4-uSjxosE"
       },
       {
-        "topic": "Introduction to Diffusion Models (DDPM, Latent Diffusion)",
-        "video": "https://www.youtube.com/watch?v=HoKDTa5jHvg"
+        "topic": "JavaScript Core: Functions, Arrays, Objects",
+        "video": "https://www.youtube.com/watch?v=tJOJPealurs"
       },
       {
-        "topic": "Transformer-based NLP Models (BERT, GPT, T5, RoBERTa)",
-        "video": "https://www.youtube.com/watch?v=SZorAJ4I-sA"
+        "topic": "DOM Manipulation: Selecting Elements, Creating/Modifying/Deleting Elements",
+        "video": "https://www.youtube.com/watch?v=5fb2aPlgoys"
       },
       {
-        "topic": "Fine-tuning Large Language Models (LLMs) for specific tasks",
-        "video": "https://www.youtube.com/watch?v=bZcKYiwtw1I"
+        "topic": "DOM Manipulation: Event Listeners (click, submit, keyup)",
+        "video": "https://www.youtube.com/watch?v=In0nB0ABaUk"
       },
       {
-        "topic": "Prompt Engineering and In-context Learning",
-        "video": "https://www.youtube.com/watch?v=jC4v5AS4RIM"
+        "topic": "Asynchronous JavaScript: Callbacks, Promises (Basics), `fetch` API for External Data",
+        "video": "https://www.youtube.com/watch?v=DHvZLI7Db8E"
       },
       {
-        "topic": "Text Generation and Summarization Techniques",
-        "video": "https://www.youtube.com/watch?v=aSxxSXqWDQI"
+        "topic": "JSON: Working with JSON Data Structures",
+        "video": "https://www.youtube.com/watch?v=lWx2tFoqYHA"
+      },
+      {
+        "topic": "Modern JS Features (ES6+): Arrow Functions, Template Literals, `let`/`const`",
+        "video": "https://www.youtube.com/watch?v=h33Srr5J9nY"
+      },
+      {
+        "topic": "Project: Enhance Week 1 Website with JS Interactivity (e.g., Dynamic Content, Form Validation, Simple API Data Fetching)",
+        "video": "https://www.youtube.com/watch?v=FwOTs4UxQS4"
       }
     ]
   },
   {
     "Week 3": [
       {
-        "topic": "Reinforcement Learning Fundamentals (MDPs, Bellman Equations, Value/Policy Iteration)",
-        "video": "https://www.youtube.com/watch?v=zC8jkmlCDCU"
+        "topic": "Backend Concepts: Server-Side, APIs, Databases",
+        "video": "https://www.youtube.com/watch?v=rHux0gMZ3Eg"
       },
       {
-        "topic": "Model-Free RL Algorithms (Q-Learning, SARSA, Policy Gradients, Actor-Critic Methods)",
-        "video": "https://www.youtube.com/watch?v=AINrxEjflaM"
+        "topic": "Node.js Basics: Setup, npm, Modules, Event Loop (Conceptual)",
+        "video": "https://www.youtube.com/watch?v=lkIFF4maKMU"
       },
       {
-        "topic": "Advanced RL (PPO, DDPG, SAC)",
-        "video": "https://www.youtube.com/watch?v=gFyJeD54dBs"
+        "topic": "Express.js: Setting Up a Server, Routing, Middleware, Request/Response Objects",
+        "video": "https://www.youtube.com/watch?v=z7ikpQCWbtQ"
       },
       {
-        "topic": "Introduction to Graph Neural Networks (GNNs)",
-        "video": "https://www.youtube.com/watch?v=GXhBEj1ZtE8"
+        "topic": "RESTful APIs: Principles, Common HTTP Methods (GET, POST, PUT, DELETE)",
+        "video": "https://www.youtube.com/watch?v=-MTSQjw5DrM"
       },
       {
-        "topic": "Explainable AI (XAI) Techniques (LIME, SHAP, Integrated Gradients)",
-        "video": "https://www.youtube.com/watch?v=MQ6fFDwjuco"
+        "topic": "Data Persistence: Introduction to Databases (e.g., SQLite/JSON file-based DB)",
+        "video": "https://www.youtube.com/watch?v=7v2OnUti2eM"
       },
       {
-        "topic": "Ethical AI Principles and Bias Mitigation Strategies",
-        "video": "https://www.youtube.com/watch?v=AOfAEQ3bMWk"
+        "topic": "Data Persistence: Basic CRUD (Create, Read, Update, Delete) Operations with a Database",
+        "video": "https://www.youtube.com/watch?v=7v2OnUti2eM"
+      },
+      {
+        "topic": "Project: Build a RESTful API with Node.js and Express.js that interacts with a Database",
+        "video": "https://www.youtube.com/watch?v=zvWKqUiovAM"
       }
     ]
   },
   {
     "Week 4": [
       {
-        "topic": "MLOps Fundamentals: Data Versioning (DVC), Model Versioning, Experiment Tracking (MLflow, Weights & Biases)",
-        "video": "https://www.youtube.com/watch?v=jIiBaYvsM60"
+        "topic": "Full-Stack Integration: Connecting Frontend (Week 2) and Backend (Week 3) APIs",
+        "video": "https://www.youtube.com/watch?v=UBUNrFtufWo"
       },
       {
-        "topic": "CI/CD for Machine Learning Pipelines",
-        "video": "https://www.youtube.com/watch?v=scEDHsr3APg"
+        "topic": "Full-Stack Integration: Handling CORS (Cross-Origin Resource Sharing)",
+        "video": "https://www.youtube.com/watch?v=4KHiSt0oLJ0"
       },
       {
-        "topic": "Model Deployment Strategies (Containerization with Docker, API with Flask/FastAPI)",
-        "video": "https://www.youtube.com/watch?v=0sOvCWFmrtA"
+        "topic": "Frontend Framework Introduction: React (Components, JSX, Props, State, useState Hook)",
+        "video": "https://www.youtube.com/watch?v=SqcY0GlETPk"
       },
       {
-        "topic": "Cloud ML Platforms (AWS SageMaker, GCP AI Platform, Azure ML services)",
-        "video": "https://www.youtube.com/watch?v=JIbIYCM48to"
+        "topic": "Authentication Concepts: High-Level Overview of Token-Based Authentication (e.g., JWT)",
+        "video": "https://www.youtube.com/watch?v=UBUNrFtufWo"
       },
       {
-        "topic": "Serverless ML and Edge AI Concepts",
-        "video": "https://www.youtube.com/watch?v=tczjZOLVjJM"
+        "topic": "Deployment Basics: Hosting Static Frontend (e.g., Netlify/Vercel)",
+        "video": "https://www.youtube.com/watch?v=5tzeYGe3P0Q"
       },
       {
-        "topic": "Multimodal AI and Foundation Models",
-        "video": "https://www.youtube.com/watch?v=LPZh9BOjkQs"
+        "topic": "Deployment Basics: Hosting Backend API (e.g., Render/Heroku Free Tier)",
+        "video": "https://www.youtube.com/watch?v=R8_veQiYBjI"
       },
       {
-        "topic": "Responsible AI Development and Governance",
-        "video": "https://www.youtube.com/watch?v=TAYJJFojwbI"
+        "topic": "Project: Rebuild a Portion of the Week 2 Frontend using React, connect it to the Week 3 Backend API, and deploy both components.",
+        "video": "https://www.youtube.com/watch?v=1MSVWUiNmxs"
       }
     ]
   }

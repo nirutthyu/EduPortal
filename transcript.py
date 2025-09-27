@@ -41,6 +41,8 @@ def summarize():
     try:
         data = request.get_json()
         transcript = data.get("transcript")
+        summaryType=data.get("type")
+        print(summaryType)
 
         if not transcript:
             return jsonify({"error": "Transcript not provided"}), 400
@@ -55,8 +57,16 @@ Here is the transcript of a YouTube video:
 
 Based on this transcript, please do the following:
 
-1. Provide a summary of the content in simple language that covers all contents of the video so that the user does not even have to view the video.
+1. Provide a summary of the content in simple language that covers all the contents of the video so that the user does not even have to view the video.
+2. Format the summary strictly in {summaryType} style as requested by the user.
+3. Do not use asterisks (*), dashes (-), or other symbols for bullet points. 
+   - If {summaryType} = "bullet points", use numbers (1., 2., 3.) instead.
+   - If {summaryType} = "essay", write in paragraphs.
+   - If {summaryType} = "outline", use numbered sections and subsections.
+4. Start directly with the summary. Do not add introductory phrases like 
+   "Here's a summary of the video content:" or similar.
 """
+
 
         summary = get_gemini_response(prompt)
 
@@ -68,7 +78,7 @@ Based on this transcript, please do the following:
         return jsonify({"error": str(e)}), 500
 
 
-supadata = Supadata(api_key="sd_8a5d95a2b1f30547a20d04b952380243")
+supadata = Supadata(api_key="sd_fea3f7c23d9ef11db8cd14f5ac31a438")
 import google.generativeai as genai
 # ---------------- ROADMAP GENERATION ----------------
 def generate_roadmap(formData):
@@ -310,6 +320,27 @@ def generate_mcq_api():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+
+@app.route("/chat", methods=["POST"])
+def chat_bot():
+    data = request.get_json()
+    subject = data.get("subject", "")
+    user_input = data.get("message", "")
+
+    if not subject or not user_input:
+        return jsonify({"error": "Both 'subject' and 'message' are required"}), 400
+
+    prompt = f"""
+    You are a helpful tutor specializing in {subject}.
+    Answer the following user question with detailed explanations, examples, and useful resources:
+    Just explain the concept in a simple way. Dont exceed more than 4 lines. When the user input is not relevant to the subject the bot should reply "Out of scope"
+    Question: {user_input}
+    """
+    model = genai.GenerativeModel("gemini-2.5-flash")
+    response = model.generate_content(prompt)
+    return jsonify({"reply": response.text})
+
     
 if __name__ == '__main__':
     app.run(debug=True)
